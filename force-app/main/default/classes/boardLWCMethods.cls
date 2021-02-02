@@ -14,7 +14,7 @@ public with sharing class boardLWCMethods {
         try {
             system.debug('recordId > ' + recordId);
 
-            Card__c card = [SELECT ID, Lane__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Description__c, (SELECT ID, Card__c, User__c FROM Card_Members__r), (SELECT ID, Card__c, Tag_Colour__c, Tag_Name__c FROM Card_Tags__r) FROM Card__c WHERE ID=:recordId];
+            Card__c card = [SELECT ID, Lane__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Description__c, (SELECT ID, Card__c, User__c FROM Card_Members__r), (SELECT ID, Card__c, Tag_Colour__c, Tag_Name__c, Board_Tag__c FROM Card_Tags__r) FROM Card__c WHERE ID=:recordId];
 
             Map<ID, List<BoardWrapper.MemberWrapper>> mapOfMembers;
             if(card.Card_Members__r != null){

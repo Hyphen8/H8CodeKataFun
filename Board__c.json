@@ -1,0 +1,11 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Board__c",
+                "referenceId": "Board__cRef1"
+            },
+            "Name": "EXAMPLE BOARD"
+        }
+    ]
+}
