@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : daniel@hyphen8.com
+  @last modified on  : 24/01/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   19/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+
+    <div class="cardMembers slds-grid">
+    
+        <template for:each={members} for:item="member">
+            
+            <!-- <div class="individualMember slds-col" key={member}> -->
+                <span key={member} style="margin-right:5px">
+                    <img class="memberAvatar"  src={member.userImageURL} height="30" width="30" title={member.userName}>
+                </span>
+
+            <!-- </div> -->
+    
+        </template>
+
+        <template if:true={showAddMemberIcon}>
+            <!-- <div class="slds-col"> -->
+                <span style="margin-right:5px;border:0.5px solid lightgrey;border-radius:50%">
+                    <lightning-icon icon-name="utility:add" alternative-text="Add member" title="Add member"></lightning-icon>
+                </span>
+            <!-- </div> -->
+        </template>
+    
+    </div>
+    
+</template>

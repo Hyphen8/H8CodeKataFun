@@ -1,0 +1,109 @@
+<!--
+  @description       : board lane html
+  @author            : daniel@hyphen8.com
+  @last modified on  : 02/02/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   19/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+    
+    <div class="laneContainer">
+        
+
+        <div data-target-id="TopCard" draggable="true" 
+                ondragstart={handleDragStart}
+                ondrop={handleDropElement} 
+                ondragover={handleAllowDrop}>
+            {lane.laneName}
+
+            <template if:true={displayBlankCard}>
+                <c-board-blank-card></c-board-blank-card>
+            </template>
+
+        </div>
+
+        
+        
+        <template for:each={cards} for:item="card">
+            
+            <div class="c-draggable" data-target-id={card.cardId} key={card.cardId} draggable="true" 
+                    ondragstart={handleDragStart}
+                    ondrop={handleDropElement} 
+                    ondragover={handleAllowDrop}
+                    onclick={handleViewCard}>
+                
+                <c-board-card
+                        card={card}
+                        display-demo-card={dropRecord}
+                        oncardarchiveddeleted={handleCardArchiveDelete}>
+                </c-board-card>
+        
+            </div>
+        
+        </template>
+        
+        <template if:true={cards}>
+        
+                <div class="c-draggable" data-target-id="NoCard" draggable="true" 
+                    ondragstart={handleDragStart}
+                    ondrop={handleDropElement} 
+                    ondragover={handleAllowDrop}>
+        
+                    <lightning-button 
+                            data-target-id={lane.laneID} 
+                            variant="base" 
+                            icon-name="utility:add" 
+                            label={label.addAnotherCard} 
+                            title={label.addAnotherCard}
+                            onclick={handleNewCardClick} >
+                    </lightning-button>
+        
+                </div>
+        
+        </template>
+        
+        <template if:false={cards}>
+        
+                <div class="c-draggable" data-target-id="NoCard" draggable="true" 
+                    ondragstart={handleDragStart}
+                    ondrop={handleDropElement} 
+                    ondragover={handleAllowDrop}>
+        
+                    <lightning-button 
+                            data-target-id={lane.laneID} 
+                            variant="base" 
+                            icon-name="utility:add" 
+                            label={label.addNewCard} 
+                            title={label.addNewCard}  
+                            onclick={handleNewCardClick} >
+                    </lightning-button>
+        
+                </div>
+        
+        </template>
+    
+    </div>
+
+
+    <!-- modal used for adding a new card to a specific lane-->
+    <c-new-card-modal 
+                record-id={recordId} 
+                lane-id={laneId} 
+                open-modal={openModal} 
+                onnewcardcreated={handleNewCardAdded}
+                onmodaclosed={handleModalClosing}>
+    </c-new-card-modal> 
+
+    <!-- modal used for displaying a card on click --> 
+    <c-board-view-card-modal
+                record-id={cardId}
+                open-modal={viewCardModal}
+                onviewmodalclosed={handleNewCardAdded}>
+    </c-board-view-card-modal>
+
+
+
+
+</template>

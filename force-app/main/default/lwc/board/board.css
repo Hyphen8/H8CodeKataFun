@@ -1,0 +1,23 @@
+.boardContainer {
+    overflow:auto;
+    overflow-y:hidden;
+    margin:0 auto; 
+    white-space: nowrap;
+    height: 70vh;
+}
+
+.laneWrapper {
+    min-width: 350px;
+    margin: 0 4px;
+    height:100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.newLaneContainer {
+    border-radius: 3px; 
+    background-color:#ebecf0; 
+    padding: 10px;
+}

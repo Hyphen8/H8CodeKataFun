@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>boardAddAnotherCard</fullName>
+        <categories>Board Application</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>boardAddAnotherCard</shortDescription>
+        <value>Add another card</value>
+    </labels>
+    <labels>
+        <fullName>boardAddNewCard</fullName>
+        <categories>Board Application</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>boardAddNewCard</shortDescription>
+        <value>Add new card</value>
+    </labels>
+    <labels>
+        <fullName>boardNewLaneButton</fullName>
+        <categories>Board Application</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>boardNewLaneButton</shortDescription>
+        <value>Add new lane</value>
+    </labels>
+</CustomLabels>

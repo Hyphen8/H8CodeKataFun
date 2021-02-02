@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : daniel@hyphen8.com
+  @last modified on  : 19/01/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   19/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+
+    <div class="tags">
+
+        <template for:each={currentTags} for:item="tag">
+        
+            <span key={tag.tagId} class={tag.tagColour} title={tag.tagName}><span class="labeltext">{tag.tagName}</span></span>
+        
+        </template>
+    
+    </div>
+    
+</template>

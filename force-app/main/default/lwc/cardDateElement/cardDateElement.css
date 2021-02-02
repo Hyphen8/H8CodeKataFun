@@ -1,0 +1,25 @@
+.cardBadge {
+    color: #5e6c84;
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    max-width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 2px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.cardIsNowDue {
+    background-color: #eb5a46;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.badges {
+    /* float: left; */
+    max-width: 100%;
+    /* margin-left: -2px; */
+}

@@ -1,0 +1,80 @@
+.tags {
+    overflow: auto;
+    position: relative;
+}
+
+
+.Green {
+    background-color: #61bd4f;
+}
+
+.DarkGreen {
+    background-color: #325f29;
+}
+
+.Navy {
+    background-color: navy;
+}
+
+.Orange {
+    background-color: orange;
+}
+
+.Pink {
+    background-color: pink;
+}
+
+.Red {
+    background-color: red;
+}
+
+.Brown {
+    background-color: brown;
+}
+
+.Maroon {
+    background-color: maroon;
+}
+
+.Black {
+    background-color: black;
+    color: white;
+}
+
+.Aqua {
+    background-color: aqua;
+}
+
+.Purple {
+    background-color: purple;
+}
+
+.Blue {
+    background-color: blue;
+}
+
+.Grey {
+    background-color: grey;
+}
+
+.tagContainer {
+    height: 16px;
+    line-height: 16px;
+    padding: 0 8px;
+    max-width: 198px;
+    float: left;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 4px 4px 0;
+    min-width: 40px;
+    text-shadow: none;
+    width: auto;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+}

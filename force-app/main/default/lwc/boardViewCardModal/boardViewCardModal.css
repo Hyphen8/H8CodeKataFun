@@ -1,0 +1,14 @@
+.descriptionWrapper {
+    overflow-wrap: break-word; 
+    white-space: pre-wrap; 
+    clear: both; 
+    display: block; 
+    margin: 0 0 4px; 
+    overflow: hidden; 
+    text-decoration: none; 
+    color: #172b4d;
+}
+
+.editButtons {
+    float:right;
+}

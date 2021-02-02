@@ -1,0 +1,64 @@
+<!--
+  @description       : html for outputting cards dates elements
+  @author            : daniel@hyphen8.com
+  @last modified on  : 24/01/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   24/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+
+    <div class="badges">
+        
+        <template if:true={card.cardDueDate}>
+            
+            <template if:true={card.cardDueDatePassed}>
+            
+                <div class="cardBadge cardIsNowDue">
+            
+                    <lightning-icon 
+                        class="slds-m-right_x-small"
+                        icon-name="utility:clock" 
+                        alternative-text="Date has passed" 
+                        size="xx-small"
+                        variant="inverse"
+                        title="Date has passed">
+                    </lightning-icon>
+            
+                    <lightning-formatted-date-time 
+                        value={card.cardDueDate} 
+                        month="short" 
+                        day="2-digit">
+                    </lightning-formatted-date-time>
+                
+                </div>
+            
+            </template>
+        
+            <template if:false={card.cardDueDatePassed}>
+            
+                <div class="cardBadge">
+            
+                    <lightning-icon 
+                        class="slds-m-right_x-small"
+                        icon-name="utility:clock" 
+                        alternative-text="Time available to get it done" 
+                        size="xx-small"
+                        title="Time available to get it done">
+                    </lightning-icon>
+            
+                    <lightning-formatted-date-time 
+                        value={card.cardDueDate} 
+                        month="short" 
+                        day="2-digit">
+                    </lightning-formatted-date-time>
+                
+                </div>
+            
+            </template>
+        
+        </template>
+    </div>
+    
+</template>

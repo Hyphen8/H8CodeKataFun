@@ -1,0 +1,27 @@
+.laneContainer {
+    border-radius: 3px;
+    background-color:#ebecf0;
+    padding: 10px;
+}
+
+.newCardContainer {
+    min-height: 38px;
+    max-height: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newCardInnerContainer {
+    border-radius: 3px; 
+    background-color:#ebecf0; 
+    padding: 10px
+}
+
+
+.dragStart {
+    opacity: 0.4;
+}
+
+.dragEnd {
+    opacity: 1;
+}

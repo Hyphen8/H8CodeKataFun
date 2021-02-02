@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Check_List__c</fullName>
+    <externalId>false</externalId>
+    <label>Card Check List</label>
+    <referenceTo>Card_Check_List__c</referenceTo>
+    <relationshipLabel>Card Check List Items</relationshipLabel>
+    <relationshipName>Card_Check_List_Items</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

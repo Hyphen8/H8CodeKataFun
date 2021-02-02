@@ -1,0 +1,16 @@
+.cardMembers {
+    /* float: right; */
+    margin: 0 -2px 0 0;
+}
+
+.individualMember {
+    height: 28px;
+    width: 28px;
+    /* float: right; */
+    margin: 0 0 4px 4px;
+}
+
+.memberAvatar {
+    border-radius: 25em;
+    object-fit: cover;
+}

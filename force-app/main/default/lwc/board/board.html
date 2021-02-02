@@ -1,0 +1,54 @@
+<!--
+  @description       : master board for displaying lanes in
+  @author            : daniel@hyphen8.com
+  @last modified on  : 23/01/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   19/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+    
+    <div class="boardContainer">
+        
+        <div class="slds-grid slds-gutters">
+            
+            <template for:each={lanes} for:item="lane">
+            
+                <div key={lane.laneID} class="slds-col laneWrapper">
+            
+                    <c-board-lane 
+                        lane={lane} 
+                        land-id={lane.landId}
+                        record-id={recordId} 
+                        drop-event-record={dragEventRecord}
+                        onnewcardadded={handleNewCardAdded}
+                        oncardmoved={handleCardMoved}
+                        ondroprecordadded={handleDragMovements}>
+                    </c-board-lane>
+            
+                </div>
+            
+            </template>
+            
+            <!-- <div class="slds-col laneWrapper">
+                
+                <div class="slds-p-horizontal_small newLaneContainer">
+                    
+                    <lightning-button 
+                            variant="base" 
+                            icon-name="utility:add" 
+                            label={label.newLaneButton} 
+                            title={label.newLaneButton}  
+                            onclick={handleNewLaneClick} >
+                    </lightning-button>
+                
+                </div>
+    
+            </div> -->
+    
+        </div>
+    
+    </div>
+
+</template>

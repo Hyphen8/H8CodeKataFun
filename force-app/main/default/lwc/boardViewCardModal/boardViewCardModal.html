@@ -1,0 +1,101 @@
+<!--
+  @description       : view card modal
+  @author            : daniel@hyphen8.com
+  @last modified on  : 24/01/2021
+  @last modified by  : daniel@hyphen8.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   23/01/2021   daniel@hyphen8.com   Initial Version
+-->
+<template>
+    <template if:true={modalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header slds-modal__header_empty">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_10-of-12">
+
+                            <div class="slds-text-heading_medium slds-m-bottom_medium">#{card.cardNumber} {card.cardName}</div>
+
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Members</div>
+                            <c-card-members
+                                card-members={card.members}
+                                display-add-member-icon="true">
+                            </c-card-members>
+                            
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Description <template if:true={descriptReadOnly}><lightning-button class="editButtons" variant="Brand" label="Edit" title="Edit edit" onclick={handleEditText}></lightning-button></template></div>
+                            <div class="descriptionWrapper">
+                                <template if:true={descriptReadOnly}>
+                                    <div onclick={handleEditText}>
+                                        <lightning-formatted-rich-text
+                                            value={card.cardDescription}>
+                                        </lightning-formatted-rich-text>
+                                    </div>
+                                </template>
+                                <template if:false={descriptReadOnly}>
+                                    <lightning-input-rich-text
+                                        value={card.cardDescription}>
+                                    </lightning-input-rich-text>
+                                    <div class="slds-m-top_medium">
+                                        <lightning-button variant="brand" label="Save" title="Save edit"></lightning-button>
+                                        <lightning-button variant="base" title="Cancel save" icon-name="utility:close" class="slds-m-left_x-small" onclick={cancelEditDescriptSave}></lightning-button>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Files</div>
+
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Feed</div>
+                                    
+                        </div>
+                        <div class="slds-col slds-size_2-of-12">
+                            <div class="slds-text-heading_medium slds-m-bottom_medium">Tags</div>
+                            <c-card-tags
+                                tags={card.tags}>
+                            </c-card-tags>
+                            
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Date</div>
+                            <c-card-date-element
+                                card={card}>
+                            </c-card-date-element>
+                            
+                            <div class="slds-text-heading_medium slds-m-bottom_medium slds-m-top_medium">Actions</div>
+                            <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <lightning-button variant="base" label="Join" title="Join this card" icon-name="utility:adduser"></lightning-button>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <lightning-button variant="base" label="List" title="Add List" icon-name="utility:task"></lightning-button>
+                                </li>
+                                <li class="slds-has-divider_top-space" role="separator"></li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <lightning-button variant="base" label="Move" title="Move Card" icon-name="utility:move"></lightning-button>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <lightning-button variant="base" label="Archive" title="Archive Card" icon-name="utility:archive"></lightning-button>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <lightning-button variant="base" label="Delete" title="Delete Card" icon-name="utility:delete"></lightning-button>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    
+</template>
