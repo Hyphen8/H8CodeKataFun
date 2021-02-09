@@ -1,7 +1,7 @@
 <!--
   @description       : individual card container
   @author            : daniel@hyphen8.com
-  @last modified on  : 25/01/2021
+  @last modified on  : 09/02/2021
   @last modified by  : daniel@hyphen8.com
   Modifications Log 
   Ver   Date         Author               Modification
@@ -37,7 +37,7 @@
             
             <div style="float:right">
                 
-                <lightning-button variant="base" data-target-id="Add tag" value={card.cardId} onclick={handleTimeSubmission} icon-name="utility:quote" title="Add Tag"></lightning-button>
+                <lightning-button variant="base" data-target-id="Add tag" value={card.cardId} onclick={handleManageTags} icon-name="utility:quote" title="Add Tag"></lightning-button>
                 <lightning-button variant="base" data-target-id="Add member" value={card.cardId} onclick={handleTimeSubmission} icon-name="utility:adduser" title="Add member"></lightning-button>
                 <lightning-button variant="base" data-target-id="Add files" value={card.cardId} onclick={handleTimeSubmission} icon-name="utility:upload" title="Add files"></lightning-button>
                 <lightning-button variant="base" data-target-id="Add comment" value={card.cardId} onclick={handleTimeSubmission} icon-name="utility:quick_text" title="Add Comment"></lightning-button>
@@ -51,6 +51,11 @@
 
     <template if:true={displayBlankSpace}>
         <c-board-blank-card></c-board-blank-card>
+    </template>
+
+
+    <template if:true={displayManageTags}>
+        <c-manage-card-tags record-id={recordId} current-tags={card.tags}></c-manage-card-tags>
     </template>
 
 </template>

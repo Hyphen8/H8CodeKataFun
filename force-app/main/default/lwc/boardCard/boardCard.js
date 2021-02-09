@@ -1,7 +1,7 @@
 /**
  * @description       : card js file
  * @author            : daniel@hyphen8.com
- * @last modified on  : 24/01/2021
+ * @last modified on  : 09/02/2021
  * @last modified by  : daniel@hyphen8.com
  * Modifications Log 
  * Ver   Date         Author               Modification
@@ -16,6 +16,7 @@ export default class BoardCard extends LightningElement {
     displayBlankSpace = false;
     displayBlankCard = false;
     errors;
+    displayManageTags = false;
 
     @api
     get card(){
@@ -71,6 +72,10 @@ export default class BoardCard extends LightningElement {
 
     handleTimeSubmission(event) {
 
+    }
+
+    handleManageTags(){
+        this.displayManageTags = true;
     }
 
 }
