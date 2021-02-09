@@ -1,7 +1,7 @@
 /**
  * @description       : wrapper class for storing board details in
  * @author            : daniel@hyphen8.com
- * @last modified on  : 02/02/2021
+ * @last modified on  : 09/02/2021
  * @last modified by  : daniel@hyphen8.com
  * Modifications Log 
  * Ver   Date         Author               Modification
@@ -32,6 +32,8 @@ public class BoardWrapper {
         @AuraEnabled public string cardName;
 
         @AuraEnabled public string cardId;
+
+        @AuraEnabled public string boardId;
 
         @AuraEnabled public integer cardNumber;
 

@@ -1,7 +1,7 @@
 /**
  * @description       : Series of methods to support the management of boards within Salesforce
  * @author            : daniel@hyphen8.com
- * @last modified on  : 02/02/2021
+ * @last modified on  : 09/02/2021
  * @last modified by  : daniel@hyphen8.com
  * Modifications Log 
  * Ver   Date         Author               Modification
@@ -14,7 +14,7 @@ public with sharing class boardLWCMethods {
         try {
             system.debug('recordId > ' + recordId);
 
-            Card__c card = [SELECT ID, Lane__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Description__c, (SELECT ID, Card__c, User__c FROM Card_Members__r), (SELECT ID, Card__c, Tag_Colour__c, Tag_Name__c, Board_Tag__c FROM Card_Tags__r) FROM Card__c WHERE ID=:recordId];
+            Card__c card = [SELECT ID, Lane__c, Board__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Description__c, (SELECT ID, Card__c, User__c FROM Card_Members__r), (SELECT ID, Card__c, Tag_Colour__c, Tag_Name__c, Board_Tag__c FROM Card_Tags__r) FROM Card__c WHERE ID=:recordId];
 
             Map<ID, List<BoardWrapper.MemberWrapper>> mapOfMembers;
             if(card.Card_Members__r != null){
@@ -47,6 +47,7 @@ public with sharing class boardLWCMethods {
 
             BoardWrapper.CardWrapper cw = new BoardWrapper.CardWrapper();
             cw.members = thisCardMembers;
+            cw.boardId = card.Board__c;
             cw.tags = thisCardTags;
             cw.cardDueDate = card.Due_Date__c;
             cw.cardDueDatePassed = card.Due_Date_Passed__c;
@@ -217,7 +218,7 @@ public with sharing class boardLWCMethods {
 
             List<Lane__c> getListOfLane = [SELECT ID, Name, Order__c FROM Lane__c WHERE Board__c=:recordId AND Order__c != 0 ORDER BY Order__c ASC];
         
-            List<Card__c> getListOfCards = [SELECT ID, Lane__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Card_Status__c FROM Card__c WHERE Board__c=:recordId AND Card_Status__c=:'Live' ORDER BY Order__c ASC];
+            List<Card__c> getListOfCards = [SELECT ID, Lane__c, Board__c, Name, Order__c, Card_Number__c, Due_Date__c, Due_Date_Passed__c, Card_Status__c FROM Card__c WHERE Board__c=:recordId AND Card_Status__c=:'Live' ORDER BY Order__c ASC];
 
             Set<ID> cardIDs = new Set<ID>();
 
@@ -284,6 +285,8 @@ public with sharing class boardLWCMethods {
                         cWrapper.cardDueDatePassed = card.Due_Date_Passed__c;
                         
                         cWrapper.cardName = card.Name;
+
+                        cWrapper.boardId = card.Board__c;
                         
                         cWrapper.cardNumber = integer.valueOf(card.Card_Number__c);
                         
