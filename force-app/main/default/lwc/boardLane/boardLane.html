@@ -1,7 +1,7 @@
 <!--
   @description       : board lane html
   @author            : daniel@hyphen8.com
-  @last modified on  : 02/02/2021
+  @last modified on  : 16/02/2021
   @last modified by  : daniel@hyphen8.com
   Modifications Log 
   Ver   Date         Author               Modification
@@ -31,8 +31,7 @@
             <div class="c-draggable" data-target-id={card.cardId} key={card.cardId} draggable="true" 
                     ondragstart={handleDragStart}
                     ondrop={handleDropElement} 
-                    ondragover={handleAllowDrop}
-                    onclick={handleViewCard}>
+                    ondragover={handleAllowDrop}>
                 
                 <c-board-card
                         card={card}

@@ -1,22 +1,43 @@
 <!--
   @description  : 
   @author       : simon@hyphen8.com
-  @date         : 09-02-2021
+  @date         : 16-02-2021
   Modifications Log 
   Ver   Date         Author              Modification
   1.0   09-02-2021   simon@hyphen8.com   Initial Version
 -->
 <template>
 
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col">
-            <span>available</span>
-            <c-card-tags tags={availableTags}></c-card-tags>
-        </div>
-        <div class="slds-col">
-            <span>current</span>
-            <c-card-tags tags={currentTags}></c-card-tags>
-        </div>
-    </div>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+       <div class="slds-modal__container">
+           <header class="slds-modal__header">
+               <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                   <lightning-icon icon-name="utility:close"
+                       alternative-text="Loading..." variant="brand">
+                       variant="inverse"
+                       size="small" ></lightning-icon>
+                   <span class="slds-assistive-text">Close</span>
+               </button>
+               <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Modal header</h2>
+           </header>
+           <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span>available</span>
+                    <c-card-tags tags={availableTags}></c-card-tags>
+                </div>
+                <div class="slds-col">
+                    <span>current</span>
+                    <c-card-tags tags={currentTags}></c-card-tags>
+                </div>
+            </div>
+           </div>
+           <footer class="slds-modal__footer">
+               <button class="slds-button slds-button_neutral">Cancel</button>
+               <button class="slds-button slds-button_brand">Save</button>
+           </footer>
+       </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
     
 </template>

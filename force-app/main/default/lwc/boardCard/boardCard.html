@@ -1,7 +1,7 @@
 <!--
   @description       : individual card container
   @author            : daniel@hyphen8.com
-  @last modified on  : 09/02/2021
+  @last modified on  : 16/02/2021
   @last modified by  : daniel@hyphen8.com
   Modifications Log 
   Ver   Date         Author               Modification
@@ -11,6 +11,7 @@
     
     <div class="cardContainer">
             
+        <div class="mainbody" data-target-id={card.cardId} key={card.cardId} onclick={handleViewCard}>
             <div class="body">
                 <span class="cardCardTitle">
                     <strong>#{card.cardNumber}</strong> {card.cardName}
@@ -33,6 +34,7 @@
                     tags={card.tags}>
                 </c-card-tags>
             </div>
+        </div>
             
             
             <div style="float:right">
@@ -57,5 +59,12 @@
     <template if:true={displayManageTags}>
         <c-manage-card-tags record-id={card.boardId} current-tags={card.tags}></c-manage-card-tags>
     </template>
+
+    <!-- modal used for displaying a card on click --> 
+    <c-board-view-card-modal
+                record-id={card.cardId}
+                open-modal={viewCardModal}
+                onviewmodalclosed={handleCloseCard}>
+    </c-board-view-card-modal>
 
 </template>
