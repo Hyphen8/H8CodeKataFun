@@ -1,7 +1,7 @@
 <!--
   @description       : 
   @author            : daniel@hyphen8.com
-  @last modified on  : 19/01/2021
+  @last modified on  : 23/02/2021
   @last modified by  : daniel@hyphen8.com
   Modifications Log 
   Ver   Date         Author               Modification
@@ -11,11 +11,12 @@
 
     <div class="tags">
 
-        <template for:each={currentTags} for:item="tag">
+        <template for:each={tags} for:item="tag">
         
             <span key={tag.tagId} class={tag.tagColour} title={tag.tagName}><span class="labeltext">{tag.tagName}</span></span>
         
         </template>
+        
     
     </div>
     

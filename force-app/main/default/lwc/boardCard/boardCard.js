@@ -91,5 +91,4 @@ export default class BoardCard extends LightningElement {
         this.viewCardModal = false;
     }
 
-
 }

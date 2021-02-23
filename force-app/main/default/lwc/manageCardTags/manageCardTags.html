@@ -1,7 +1,7 @@
 <!--
   @description  : 
   @author       : simon@hyphen8.com
-  @date         : 16-02-2021
+  @date         : 23-02-2021
   Modifications Log 
   Ver   Date         Author              Modification
   1.0   09-02-2021   simon@hyphen8.com   Initial Version
@@ -13,7 +13,6 @@
            <header class="slds-modal__header">
                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
                    <lightning-icon icon-name="utility:close"
-                       alternative-text="Loading..." variant="brand">
                        variant="inverse"
                        size="small" ></lightning-icon>
                    <span class="slds-assistive-text">Close</span>
@@ -22,6 +21,7 @@
            </header>
            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
             <div class="slds-grid slds-gutters">
+                
                 <div class="slds-col">
                     <span>available</span>
                     <c-card-tags tags={availableTags}></c-card-tags>

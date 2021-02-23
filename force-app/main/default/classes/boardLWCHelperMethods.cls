@@ -1,7 +1,7 @@
 /**
  * @description       : helper reusabled methods
  * @author            : daniel@hyphen8.com
- * @last modified on  : 02/02/2021
+ * @last modified on  : 23/02/2021
  * @last modified by  : daniel@hyphen8.com
  * Modifications Log 
  * Ver   Date         Author               Modification
@@ -73,7 +73,8 @@ public with sharing class boardLWCHelperMethods {
             }
 
             BoardWrapper.TagsWrapper tag = new BoardWrapper.TagsWrapper();
-            tag.tagColour = 'tagContainer ' + ct.Tag_Colour__c;
+            //tag.tagColour = 'tagContainer ' + ct.Tag_Colour__c;
+            tag.tagColour = ct.Tag_Colour__c;
             tag.tagName = ct.Tag_Name__c;
             tag.boardTagId = ct.Board_Tag__c;
             tag.tagId = ct.Id;

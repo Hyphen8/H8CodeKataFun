@@ -1,7 +1,7 @@
 /**
  * @description       : 
  * @author            : daniel@hyphen8.com
- * @last modified on  : 02/02/2021
+ * @last modified on  : 23/02/2021
  * @last modified by  : daniel@hyphen8.com
  * Modifications Log 
  * Ver   Date         Author               Modification
@@ -33,6 +33,7 @@ public with sharing class boardLWCTagManagement {
 
              BoardWrapper.TagsWrapper tagWrapper = new BoardWrapper.TagsWrapper();
              tagWrapper.boardTagId = boardTag.id;                        
+             //tagWrapper.tagColour = 'tagContainer ' + boardTag.colour__c;
              tagWrapper.tagColour = boardTag.colour__c;
              tagWrapper.tagName = boardTag.Name;
              returnTagsWrapper.add(tagWrapper);             
